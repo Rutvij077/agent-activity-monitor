@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+langgraph
+sqlalchemy
+pymysql
+pydantic
+pydantic-settings
+streamlit
+requests
+python-dotenv
+pytest
