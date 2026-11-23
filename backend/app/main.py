@@ -1,8 +1,9 @@
 
 from fastapi import FastAPI
+from backend.app.config import settings
 
 app = FastAPI(
-    title="AI Agent Execution Monitor",
+    title=settings.APP_NAME,
     description="Monitor AI agent executions, token usage, costs and performance.",
     version="1.0.0"
 )
