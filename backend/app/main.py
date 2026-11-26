@@ -1,6 +1,7 @@
 
 from fastapi import FastAPI
 from backend.app.config import settings
+from backend.app.schemas.health import HealthResponse
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -9,7 +10,7 @@ app = FastAPI(
 )
 
 
-@app.get("/health")
+@app.get("/health", response_model=HealthResponse)
 def health_check():
     return {
         "status": "healthy",
