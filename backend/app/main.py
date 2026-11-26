@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI
 from backend.app.config import settings
-from backend.app.schemas.health import HealthResponse
+from backend.app.api.health import router as health_router
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -9,10 +9,4 @@ app = FastAPI(
     version="1.0.0"
 )
 
-
-@app.get("/health", response_model=HealthResponse)
-def health_check():
-    return {
-        "status": "healthy",
-        "message": "AI Agent Monitor API is running"
-    }
+app.include_router(health_router)
